@@ -5,7 +5,7 @@ const {UnauthenticatedError}=require('../errors')
 const authenticateUser=(req,res,next)=>{
     const authHeader=req.headers.authorization
     if(!authHeader || !authHeader.startsWith('Bearer')){
-    throw new UnauthenticatedError('Authentication Invalid')
+    throw new UnauthenticatedError('Authentication Invalid!No token')
     }
     const token = authHeader.split(' ')[1]
     try {

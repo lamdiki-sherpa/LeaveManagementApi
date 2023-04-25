@@ -6,6 +6,7 @@ const getAllLeaves=async(req,res)=>{
 const leaves = await Job.find({createdBy:req.user.userId}).sort('createdAt')
 res.status(StatusCodes.OK).json({leaves,count:leaves.length})
 }
+
 const getLeave=async(req,res)=>{
     const {user:{userId},params:{id:leaveId}}=req
     const leave = await Job.findOne({
