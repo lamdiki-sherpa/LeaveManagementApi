@@ -22,7 +22,7 @@ const leaveRouter=require('./route/leave')
 const departmentRouter=require('./route/department')
 const leaveTypeRouter=require('./route/leaveType')
 const EmployeeRouter=require('./route/user')
-
+const AdminRouter=require('./route/admin')
 
 //error handler
 const errorHandlerMiddleware=require('./middleware/error-handler')
@@ -45,6 +45,7 @@ app.use('/api/v1/leave',authenticateUser,leaveRouter)
 app.use('/api/v1/department',authenticateUser,CheckAdminAuth,departmentRouter)
 app.use('/api/v1/leaveType',authenticateUser,CheckAdminAuth,leaveTypeRouter)
 app.use('/api/v1/employee',authenticateUser,CheckAdminAuth,EmployeeRouter)
+app.use('/api/v1/admin',authenticateUser,CheckAdminAuth,AdminRouter)
 
 //middleware
 app.use(notFound)
