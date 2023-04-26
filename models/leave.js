@@ -1,17 +1,6 @@
 const mongoose= require('mongoose')
 
 const LeaveSchema =new mongoose.Schema({
-    // company:{
-    //     type:String,
-    //     required:[true,'please provide company name'],
-    //     maxlength:50
-    // },
-    // position:{
-    //     type:String,
-    //     required:[true,'please provide position'],
-    //     maxlength:100
-        
-    // },
     // LeaveType: {
     //     type: mongoose.Types.ObjectId,
     //     ref: "LeaveType",
@@ -22,10 +11,9 @@ const LeaveSchema =new mongoose.Schema({
         type:String,
          required:true,
     },
-    //   LeaveDetails: {
-    //     type: String,
-    //     required: true,
-    //   },
+      LeaveDetails: {
+        type: String,
+      },
       StartLeaveDate: {
         type: Date,
         default: Date.now,
